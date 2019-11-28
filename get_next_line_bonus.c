@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 18:42:52 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/11/26 17:23:05 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/11/27 20:44:54 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int					ft_putline(int fd, char **s, char **line)
 	size = 0;
 	while (s[fd][size] != '\n')
 		size++;
-	if (!(*line = malloc(sizeof(char) * size + 1)))
-		return (-1);
 	*line = ft_substr(s[fd], 0, size);
 	tmp = ft_strdup(&s[fd][size + 1]);
 	free(s[fd]);

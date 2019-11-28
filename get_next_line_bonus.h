@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 18:40:21 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/11/26 17:24:57 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/11/27 20:45:05 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #  define BUFFER_SIZE 32
 # endif
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 

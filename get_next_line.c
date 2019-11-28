@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 18:42:52 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/11/26 17:19:30 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/11/27 16:16:06 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,9 @@ int					ft_putline(int fd, char **s, char **line)
 	size = 0;
 	while (s[fd][size] != '\n')
 		size++;
-	if (!(*line = malloc(sizeof(char) * size + 1)))
-		return (-1);
 	*line = ft_substr(s[fd], 0, size);
 	tmp = ft_strdup(&s[fd][size + 1]);
-	ft_strdel(s);
+	free(s[fd]);
 	s[fd] = tmp;
 	return (1);
 }
@@ -60,7 +58,7 @@ int					output(int ret, int fd, char **s, char **line)
 	else if (ret == 0 && (s[fd] == NULL || s[fd][0] == '\0'))
 	{
 		*line = ft_strdup("");
-		ft_strdel(s);
+		ft_strdel(&s[fd]);
 		return (0);
 	}
 	else if (ft_strchr(s[fd], '\n'))
@@ -68,7 +66,7 @@ int					output(int ret, int fd, char **s, char **line)
 	else
 	{
 		*line = ft_strdup(s[fd]);
-		ft_strdel(s);
+		ft_strdel(&s[fd]);
 		return (0);
 	}
 }
